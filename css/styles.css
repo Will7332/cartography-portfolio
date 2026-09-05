@@ -95,6 +95,16 @@ main {
   font-size: 0.9rem;
 }
 
+.see-all {
+  margin-top: 1.5rem;
+}
+
+.see-all a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
 .site-footer {
   text-align: center;
   padding: 2rem;
