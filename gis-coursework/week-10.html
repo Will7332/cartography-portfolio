@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teton Pass Avalanche Risk | Will Hanford</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../index.html" class="logo">Will Hanford</a>
+    <nav>
+      <ul>
+        <li><a href="../maps.html">Digital Cartography</a></li>
+        <li><a href="../gis-coursework.html" class="active">GIS Coursework</a></li>
+        <li><a href="../hand-drawn.html">Hand-Drawn Maps</a></li>
+        <li><a href="../creative.html">Creative</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <p class="crumb"><a href="../gis-coursework.html">GIS Coursework</a> / Week 10</p>
+
+    <section class="hero">
+      <h1>Teton Pass Avalanche Risk</h1>
+    </section>
+
+    <figure class="main-map">
+      <img src="../images/gis-coursework/week-10/week10_07.jpeg" alt="Final layout: Teton Pass avalanche risk.">
+      <figcaption>Final layout: Teton Pass avalanche risk.</figcaption>
+    </figure>
+
+    <div class="detail-section">
+      <h2>Overview</h2>
+      <p>Modeled avalanche-prone terrain around Teton Pass, Wyoming, using elevation, slope, aspect, and land cover data, plus a viewshed to see which slopes could be seen from a high point.</p>
+    </div>
+
+    <div class="detail-section">
+      <h2>Process</h2>
+      <p>Mosaicked two DEMs, derived slope and aspect layers, then used Raster Calculator with land cover data to flag terrain matching avalanche-prone criteria.</p>
+    </div>
+
+    <div class="scroll-strip secondary">
+      <figure class="scroll-item"><img src="../images/gis-coursework/week-10/week10_01.jpg" alt="Hillshade generated from the mosaicked DEM."><figcaption>Hillshade generated from the mosaicked DEM.</figcaption></figure>
+      <figure class="scroll-item"><img src="../images/gis-coursework/week-10/week10_02.jpg" alt="Teton Pass route highlighted for the study area."><figcaption>Teton Pass route highlighted for the study area.</figcaption></figure>
+      <figure class="scroll-item"><img src="../images/gis-coursework/week-10/week10_03.png" alt="Raster Calculator expression for avalanche-prone terrain."><figcaption>Raster Calculator expression for avalanche-prone terrain.</figcaption></figure>
+      <figure class="scroll-item"><img src="../images/gis-coursework/week-10/week10_04.png" alt="Avalanche-prone terrain overlaid on the pass route."><figcaption>Avalanche-prone terrain overlaid on the pass route.</figcaption></figure>
+      <figure class="scroll-item"><img src="../images/gis-coursework/week-10/week10_05.png" alt="3D viewshed from a high point along the pass."><figcaption>3D viewshed from a high point along the pass.</figcaption></figure>
+      <figure class="scroll-item"><img src="../images/gis-coursework/week-10/week10_06.png" alt="Topographic profile of Teton Pass."><figcaption>Topographic profile of Teton Pass.</figcaption></figure>
+    </div>
+
+    <a class="back-link" href="../gis-coursework.html">&larr; Back to GIS Coursework</a>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Will Hanford</p>
+  </footer>
+
+  <script src="../js/main.js?v=2"></script>
+</body>
+</html>

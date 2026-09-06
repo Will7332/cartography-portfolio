@@ -8,11 +8,13 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">Will Hanford</div>
+    <a href="index.html" class="logo">Will Hanford</a>
     <nav>
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="maps.html">Maps</a></li>
+        <li><a href="maps.html">Digital Cartography</a></li>
+        <li><a href="gis-coursework.html">GIS Coursework</a></li>
+        <li><a href="hand-drawn.html">Hand-Drawn Maps</a></li>
+        <li><a href="creative.html">Creative</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
@@ -20,31 +22,54 @@
 
   <main>
     <section class="hero">
-      <h1>Cartography &amp; Map Design</h1>
-      <p>A collection of maps I've designed and built.</p>
+      <h1>Every Way I Make a Map</h1>
+      <p class="dek">A collection of cartography work &mdash; professional, academic, and just for fun.</p>
     </section>
 
-    <section class="gallery-preview">
-      <h2>Featured Work</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="images/temple-maps/CaliforniaTemples_(2).png" alt="California Temples map">
-        </div>
-        <div class="gallery-item">
-          <img src="images/temple-maps/TexasTemples-01.png" alt="Texas Temples map">
-        </div>
-        <div class="gallery-item">
-          <img src="images/temple-maps/NortheastTemples_(2).png" alt="Northeast Temples map">
-        </div>
+    <div class="featured-grid">
+      <div class="featured-item">
+        <img src="images/temple-maps/CaliforniaTemples_(2).png" alt="California Temples map">
       </div>
-      <p class="see-all"><a href="maps.html">See all maps &rarr;</a></p>
-    </section>
+      <div class="featured-item">
+        <img src="images/gis-coursework/featured-wasatch-schools.png" alt="Schools along the Wasatch Front, GIS coursework map">
+      </div>
+      <div class="featured-item">
+        <img src="images/hand-drawn/utah%20retake_1.jpg" alt="Hand-drawn map of Utah">
+      </div>
+      <div class="featured-item">
+        <img src="images/creative/MarioKart8MAP.png" alt="Mario Kart 8 open-world concept map">
+      </div>
+    </div>
+
+    <h2 class="section-label">Explore</h2>
+    <div class="entry-cards">
+      <a class="entry-card" href="maps.html">
+        <span class="entry-mark"></span>
+        <h3>Digital Cartography</h3>
+        <p>Illustrated maps built for print and digital use.</p>
+      </a>
+      <a class="entry-card" href="gis-coursework.html">
+        <span class="entry-mark"></span>
+        <h3>GIS Coursework</h3>
+        <p>Spatial analysis from two college GIS courses.</p>
+      </a>
+      <a class="entry-card" href="hand-drawn.html">
+        <span class="entry-mark"></span>
+        <h3>Hand-Drawn Maps</h3>
+        <p>Pencil-and-paper maps of places I've lived.</p>
+      </a>
+      <a class="entry-card" href="creative.html">
+        <span class="entry-mark"></span>
+        <h3>Creative</h3>
+        <p>Personal projects, made just for fun.</p>
+      </a>
+    </div>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Will Hanford</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>
