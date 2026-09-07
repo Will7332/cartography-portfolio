@@ -1,5 +1,47 @@
-// Lightbox for images inside horizontal scroll strips and marked grids.
 document.addEventListener('DOMContentLoaded', () => {
+  setupNavToggle();
+  setupLightbox();
+});
+
+// Mobile hamburger menu: slide-in nav drawer.
+function setupNavToggle() {
+  const toggle = document.querySelector('.nav-toggle');
+  const overlay = document.querySelector('.nav-overlay');
+  const nav = document.querySelector('.site-header nav');
+  if (!toggle || !overlay || !nav) return;
+
+  function closeNav() {
+    document.body.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function openNav() {
+    document.body.classList.add('nav-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  toggle.addEventListener('click', () => {
+    const isOpen = document.body.classList.contains('nav-open');
+    if (isOpen) {
+      closeNav();
+    } else {
+      openNav();
+    }
+  });
+
+  overlay.addEventListener('click', closeNav);
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeNav);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNav();
+  });
+}
+
+// Lightbox for images inside horizontal scroll strips and marked grids.
+function setupLightbox() {
   const groups = document.querySelectorAll('.scroll-strip, .lightbox-grid');
   if (!groups.length) return;
 
@@ -81,4 +123,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowLeft') show(currentIndex - 1);
     if (e.key === 'ArrowRight') show(currentIndex + 1);
   });
-});
+}

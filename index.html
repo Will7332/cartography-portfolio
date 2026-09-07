@@ -4,21 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Will Hanford | Cartography Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css?v=9">
+  <link rel="stylesheet" href="css/styles.css?v=21">
 </head>
 <body>
   <header class="site-header">
     <a href="index.html" class="logo">Will Hanford</a>
     <nav>
       <ul>
-        <li><a href="maps.html">Digital Cartography</a></li>
-        <li><a href="gis-coursework.html">GIS Coursework</a></li>
-        <li><a href="hand-drawn.html">Hand-Drawn Maps</a></li>
+        <li><a href="index.html" class="active">About</a></li>
+        <li><a href="maps.html">Digital</a></li>
+        <li><a href="gis-coursework.html">GIS</a></li>
+        <li><a href="hand-drawn.html">Hand-Drawn</a></li>
         <li><a href="creative.html">Creative</a></li>
-        <li><a href="about.html">About</a></li>
       </ul>
     </nav>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <div class="nav-overlay"></div>
+
+  <div class="hero-banner">
+    <div class="banner-item">
+      <img src="images/temple-maps/CaliforniaTemples_(2).png" alt="California Temples map">
+    </div>
+    <div class="banner-item">
+      <img src="images/gis-coursework/featured-wasatch-schools.png" alt="Schools along the Wasatch Front, GIS coursework map">
+    </div>
+    <div class="banner-item">
+      <img src="images/hand-drawn/utah%20retake_1.jpg" alt="Hand-drawn map of Utah">
+    </div>
+    <div class="banner-item">
+      <img src="images/creative/MarioKart8MAP.png" alt="Mario Kart 8 open-world concept map">
+    </div>
+  </div>
 
   <main>
     <section class="hero">
@@ -26,42 +48,58 @@
       <p class="dek">A collection of cartography work &mdash; professional, academic, and just for fun.</p>
     </section>
 
-    <div class="featured-grid">
-      <div class="featured-item">
-        <img src="images/temple-maps/CaliforniaTemples_(2).png" alt="California Temples map">
+    <section class="gis-band">
+      <h2>Explore</h2>
+      <div class="entry-cards">
+        <a class="entry-card" href="maps.html">
+          <span class="entry-mark"></span>
+          <h3>Digital Cartography</h3>
+          <p>Illustrated maps built for print and digital use.</p>
+        </a>
+        <a class="entry-card" href="gis-coursework.html">
+          <span class="entry-mark"></span>
+          <h3>GIS Coursework</h3>
+          <p>Spatial analysis from two college GIS courses.</p>
+        </a>
+        <a class="entry-card" href="hand-drawn.html">
+          <span class="entry-mark"></span>
+          <h3>Hand-Drawn Maps</h3>
+          <p>Pencil-and-paper maps of places I've lived.</p>
+        </a>
+        <a class="entry-card" href="creative.html">
+          <span class="entry-mark"></span>
+          <h3>Creative</h3>
+          <p>Personal projects, made just for fun.</p>
+        </a>
       </div>
-      <div class="featured-item">
-        <img src="images/gis-coursework/featured-wasatch-schools.png" alt="Schools along the Wasatch Front, GIS coursework map">
-      </div>
-      <div class="featured-item">
-        <img src="images/hand-drawn/utah%20retake_1.jpg" alt="Hand-drawn map of Utah">
-      </div>
-      <div class="featured-item">
-        <img src="images/creative/MarioKart8MAP.png" alt="Mario Kart 8 open-world concept map">
-      </div>
-    </div>
+    </section>
 
-    <h2 class="section-label">Explore</h2>
-    <div class="entry-cards">
-      <a class="entry-card" href="maps.html">
-        <span class="entry-mark"></span>
-        <h3>Digital Cartography</h3>
-        <p>Illustrated maps built for print and digital use.</p>
-      </a>
-      <a class="entry-card" href="gis-coursework.html">
-        <span class="entry-mark"></span>
-        <h3>GIS Coursework</h3>
-        <p>Spatial analysis from two college GIS courses.</p>
-      </a>
-      <a class="entry-card" href="hand-drawn.html">
-        <span class="entry-mark"></span>
-        <h3>Hand-Drawn Maps</h3>
-        <p>Pencil-and-paper maps of places I've lived.</p>
-      </a>
-      <a class="entry-card" href="creative.html">
-        <span class="entry-mark"></span>
-        <h3>Creative</h3>
-        <p>Personal projects, made just for fun.</p>
+    <section class="gis-band">
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <figure class="about-portrait">
+          <img src="images/about/will-portrait.jpg" alt="Will Hanford">
+        </figure>
+        <div class="about-bio">
+          <p>I&rsquo;m William Hanford, originally from Orlando, Florida, and I come from a smaller family with one sister. I served a full-time LDS mission in Colorado, and after returning home I earned my Associate&rsquo;s Degree at my community college in Orlando.</p>
+          <p>I then transferred to Brigham Young University&ndash;Idaho, where I graduated with a Bachelor&rsquo;s degree in Graphic Design with a UI/UX emphasis, along with a minor in Geographic Information Systems (GIS), since I&rsquo;ve always had an interest in maps as well.</p>
+          <p>Cartography is something I&rsquo;ve always found fascinating &mdash; it combines the tools of graphic design and GIS. That interest is what led me to create the temple maps and the rest of the work on this site.</p>
+          <div class="about-links">
+            <a href="mailto:willhanforde@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/williamhanford/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.instagram.com/willhanford_art/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ux-promo">
+      <div class="ux-promo-text">
+        <h2>UX Design Portfolio</h2>
+        <p>Alongside cartography, I have done UX work, focusing on interfaces that are user-friendly and easy to understand. My UX portfolio has case studies and other graphic design work outside of mapping.</p>
+      </div>
+      <a class="ux-promo-image" href="https://williamhanfordux.framer.website/" target="_blank" rel="noopener">
+        <img src="images/about/ux-portfolio-preview.jpg" alt="William Hanford UX Design portfolio site">
       </a>
     </div>
   </main>
@@ -70,6 +108,6 @@
     <p>&copy; 2026 Will Hanford</p>
   </footer>
 
-  <script src="js/main.js?v=4"></script>
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>
