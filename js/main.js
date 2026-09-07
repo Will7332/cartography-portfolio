@@ -1,7 +1,7 @@
-// Lightbox for images inside horizontal scroll strips.
+// Lightbox for images inside horizontal scroll strips and marked grids.
 document.addEventListener('DOMContentLoaded', () => {
-  const strips = document.querySelectorAll('.scroll-strip');
-  if (!strips.length) return;
+  const groups = document.querySelectorAll('.scroll-strip, .lightbox-grid');
+  if (!groups.length) return;
 
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  strips.forEach((strip) => {
-    const figs = Array.from(strip.querySelectorAll('.scroll-item'));
+  groups.forEach((group) => {
+    const figs = Array.from(group.querySelectorAll(':scope > figure'));
     const items = figs.map((fig) => {
       const img = fig.querySelector('img');
       const caption = fig.querySelector('figcaption');

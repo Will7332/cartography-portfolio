@@ -214,6 +214,8 @@ main {
   font-weight: 600;
   font-size: 1.3rem;
   margin: 0 0 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 3px solid var(--color-accent-2);
 }
 
 .button-grid {
@@ -222,26 +224,36 @@ main {
   gap: 0.75rem;
 }
 
-.gis-button {
-  display: block;
-  padding: 0.9rem 1.1rem;
+.gis-card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 10px;
+  overflow: hidden;
   background: var(--color-surface);
-  color: var(--color-text);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
+  color: var(--color-text);
   transition: border-color 0.15s ease;
 }
 
-.gis-button:hover {
+.gis-card:hover {
   border-color: var(--color-accent);
 }
 
-.gis-button.is-external {
-  border-style: dashed;
-  color: var(--color-muted);
+.gis-card-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  background: var(--color-border);
+}
+
+.gis-card-title {
+  padding: 0.65rem 0.9rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.3;
 }
 
 .crumb {
@@ -367,7 +379,11 @@ main {
 
 .scroll-strip.equal-height .scroll-item img {
   width: auto;
-  height: 260px;
+  height: 300px;
+}
+
+.scroll-strip.secondary.equal-height .scroll-item img {
+  height: 180px;
 }
 
 .grid-2col {
@@ -391,7 +407,8 @@ main {
   }
 }
 
-.scroll-strip .scroll-item img {
+.scroll-strip .scroll-item img,
+.lightbox-grid img {
   cursor: zoom-in;
 }
 
@@ -510,9 +527,57 @@ main {
   color: var(--color-muted);
 }
 
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.project-nav-link {
+  flex: 1 1 0;
+  max-width: 48%;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.35;
+  transition: border-color 0.15s ease;
+}
+
+.project-nav-link:hover {
+  border-color: var(--color-accent);
+}
+
+.project-nav-link.nav-prev {
+  text-align: left;
+}
+
+.project-nav-link.nav-next {
+  text-align: right;
+  margin-left: auto;
+}
+
+@media (max-width: 560px) {
+  .project-nav {
+    flex-direction: column;
+  }
+
+  .project-nav-link {
+    max-width: 100%;
+  }
+}
+
 .back-link {
   display: inline-block;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   color: var(--color-muted);
   text-decoration: none;
   font-size: 0.9rem;

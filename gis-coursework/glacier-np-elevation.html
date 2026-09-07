@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glacier NP Elevation | Will Hanford</title>
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css?v=3">
 </head>
 <body>
   <header class="site-header">
@@ -27,14 +27,17 @@
       <h1>Glacier NP Elevation</h1>
     </section>
 
-    <div class="detail-images">
-      <figure><img src="../images/gis-coursework/glacier-np-elevation/01.png" alt="Glacier NP Elevation"><figcaption>Glacier NP Elevation</figcaption></figure>
-      <figure><img src="../images/gis-coursework/glacier-np-elevation/02.png" alt="Glacier NP Elevation"><figcaption>Glacier NP Elevation</figcaption></figure>
-      <figure><img src="../images/gis-coursework/glacier-np-elevation/03.png" alt="Glacier NP Elevation"><figcaption>Glacier NP Elevation</figcaption></figure>
-      <figure><img src="../images/gis-coursework/glacier-np-elevation/04.png" alt="Glacier NP Elevation"><figcaption>Glacier NP Elevation</figcaption></figure>
-      <figure><img src="../images/gis-coursework/glacier-np-elevation/05.png" alt="Glacier NP Elevation"><figcaption>Glacier NP Elevation</figcaption></figure>
-      <figure><img src="../images/gis-coursework/glacier-np-elevation/06.jpeg" alt="Glacier NP Elevation"><figcaption>Glacier NP Elevation</figcaption></figure>
-      <figure><img src="../images/gis-coursework/glacier-np-elevation/07.png" alt="Glacier NP Elevation"><figcaption>Glacier NP Elevation</figcaption></figure>
+    <figure class="main-map">
+      <img src="../images/gis-coursework/glacier-np-elevation/06.jpeg" alt="Glacier National Park elevation, in feet.">
+      <figcaption>Glacier National Park elevation, in feet.</figcaption>
+    </figure>
+
+    <div class="scroll-strip equal-height">
+      <figure class="scroll-item"><img src="../images/gis-coursework/glacier-np-elevation/02.png" alt="Aspect raster of Glacier National Park."><figcaption>Aspect raster of Glacier National Park.</figcaption></figure>
+      <figure class="scroll-item"><img src="../images/gis-coursework/glacier-np-elevation/03.png" alt="Hillshade of Glacier National Park elevation."><figcaption>Hillshade of Glacier National Park elevation.</figcaption></figure>
+      <figure class="scroll-item"><img src="../images/gis-coursework/glacier-np-elevation/04.png" alt="Hillshade rendered in grayscale."><figcaption>Hillshade rendered in grayscale.</figcaption></figure>
+      <figure class="scroll-item"><img src="../images/gis-coursework/glacier-np-elevation/05.png" alt="Hillshade with high-elevation areas highlighted."><figcaption>Hillshade with high-elevation areas highlighted.</figcaption></figure>
+      <figure class="scroll-item"><img src="../images/gis-coursework/glacier-np-elevation/07.png" alt="Contour line detail of the park's terrain."><figcaption>Contour line detail of the park's terrain.</figcaption></figure>
     </div>
 
     <div class="detail-section">
@@ -47,6 +50,12 @@
       <p>Exported a 30m DEM for the park boundary, converted it to feet, and generated an elevation histogram with summary statistics (mean, median, min, max).</p>
     </div>
 
+
+    <div class="project-nav">
+      <a class="project-nav-link nav-prev" href="chicago-crime-hotspots.html">&larr; Go to Chicago Crime Hot Spots</a>
+      <a class="project-nav-link nav-next" href="crime-index-choropleth.html">Go to US Crime Index Map &rarr;</a>
+    </div>
+
     <a class="back-link" href="../gis-coursework.html">&larr; Back to GIS Coursework</a>
   </main>
 
@@ -54,6 +63,6 @@
     <p>&copy; 2026 Will Hanford</p>
   </footer>
 
-  <script src="../js/main.js?v=2"></script>
+  <script src="../js/main.js?v=3"></script>
 </body>
 </html>
