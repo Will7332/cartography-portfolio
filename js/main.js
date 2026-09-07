@@ -30,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     currentIndex = (index + currentItems.length) % currentItems.length;
     const item = currentItems[currentIndex];
     imgEl.src = item.src;
-    imgEl.alt = item.caption;
-    captionEl.textContent = item.caption;
+    imgEl.alt = item.alt;
+    captionEl.textContent = item.caption || '';
+    captionEl.hidden = !item.caption;
     const multi = currentItems.length > 1;
     prevBtn.hidden = !multi;
     nextBtn.hidden = !multi;
@@ -56,7 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const caption = fig.querySelector('figcaption');
       return {
         src: img.getAttribute('src'),
-        caption: caption ? caption.textContent : img.alt,
+        alt: img.alt,
+        caption: caption ? caption.textContent : '',
       };
     });
     figs.forEach((fig, i) => {
