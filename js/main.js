@@ -1,7 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
   setupNavToggle();
   setupLightbox();
+  setupHeroCarousel();
 });
+
+// Home page hero: crossfade through the visual images every 5 seconds.
+function setupHeroCarousel() {
+  const images = document.querySelectorAll('.hero-visual-img');
+  if (images.length < 2) return;
+
+  let current = 0;
+  setInterval(() => {
+    images[current].classList.remove('is-active');
+    current = (current + 1) % images.length;
+    images[current].classList.add('is-active');
+  }, 5000);
+}
 
 // Mobile hamburger menu: slide-in nav drawer.
 function setupNavToggle() {
