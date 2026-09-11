@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Will Hanford | Cartography Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css?v=26">
+  <link rel="stylesheet" href="css/styles.css?v=44">
 </head>
 <body>
   <header class="site-header">
@@ -27,47 +27,53 @@
 
   <div class="nav-overlay"></div>
 
-  <section class="hero-split">
-    <div class="hero-text">
-      <h1>Every Way I Make a Map</h1>
-      <p class="dek">A collection of cartography work &mdash; professional, academic, and just for fun.</p>
-    </div>
-    <div class="hero-visual">
-      <img class="hero-visual-img is-active" src="images/temple-maps/CaliforniaTemples_(2).png" alt="California Temples map">
-      <img class="hero-visual-img" src="images/gis-coursework/featured-wasatch-schools.png" alt="Schools along the Wasatch Front, GIS coursework map">
-      <img class="hero-visual-img" src="images/hand-drawn/utah%20retake_1.jpg" alt="Hand-drawn map of Utah">
-      <img class="hero-visual-img" src="images/creative/MarioKart8MAP.png" alt="Mario Kart 8 open-world concept map">
-    </div>
-  </section>
-
   <main>
-    <section class="gis-band hero-scale">
-      <h2>Explore My Work</h2>
-      <div class="entry-cards">
-        <a class="entry-card" href="maps.html">
-          <span class="entry-mark"></span>
-          <h3>Digital Cartography</h3>
-          <p>Illustrated maps built for print and digital use.</p>
-        </a>
-        <a class="entry-card" href="gis-coursework.html">
-          <span class="entry-mark"></span>
-          <h3>GIS Coursework</h3>
-          <p>Spatial analysis from two college GIS courses.</p>
-        </a>
-        <a class="entry-card" href="hand-drawn.html">
-          <span class="entry-mark"></span>
-          <h3>Hand-Drawn Maps</h3>
-          <p>Pencil-and-paper maps of places I've lived.</p>
-        </a>
-        <a class="entry-card" href="creative.html">
-          <span class="entry-mark"></span>
-          <h3>Creative</h3>
-          <p>Personal projects, made just for fun.</p>
-        </a>
+    <section class="hero-heading">
+      <h1>Every Way I Make a Map</h1>
+    </section>
+
+    <section class="hero-split">
+      <div class="hero-carousel">
+        <img src="images/temple-maps/MissouriTemples2-02.jpg" alt="Missouri Temples map example" class="is-active">
+        <img src="images/gis-coursework/glacier-np-elevation/06.jpeg" alt="Glacier National Park elevation map example">
+        <img src="images/hand-drawn/utah%20retake_1.jpg" alt="Hand-drawn map example">
+        <img src="images/creative/MarioKart8MAP.png" alt="Creative map example">
+        <div class="hero-split-overlay">
+          <p class="hero-split-text">Cartography spanning illustration, GIS analysis, hand-drawn work, and personal projects &mdash; professional, academic, and just for fun.</p>
+        </div>
       </div>
     </section>
 
-    <section class="gis-band hero-scale">
+    <section class="hero-explore">
+      <h2>Explore My Work</h2>
+      <a class="chevron-down" href="#hero-grid" aria-label="Scroll to work"></a>
+    </section>
+
+    <section class="hero-grid" id="hero-grid">
+      <a class="hero-cell hero-cell--tall" href="maps.html">
+        <img class="hero-cell-image" src="images/temple-maps/SouthernCaliforniaTemples-03.png" alt="Southern California Temples illustrated map">
+        <div class="hero-cell-title">
+          <h3>Illustrated Maps</h3>
+          <p>Built for print and digital use.</p>
+        </div>
+      </a>
+      <a class="hero-cell" href="gis-coursework.html">
+        <img class="hero-cell-image" src="images/gis-coursework/featured-teton-pass.jpg" alt="Teton Pass avalanche risk map">
+        <div class="hero-cell-title">
+          <h3>Coursework</h3>
+          <p>Spatial analysis, two GIS courses.</p>
+        </div>
+      </a>
+      <a class="hero-cell" href="hand-drawn.html">
+        <img class="hero-cell-image" src="images/hand-drawn/Colorado%20Map%20Closeup_1.webp" alt="Close-up of hand-drawn Colorado map">
+        <div class="hero-cell-title">
+          <h3>Pencil &amp; Paper</h3>
+          <p>Places I've lived.</p>
+        </div>
+      </a>
+    </section>
+
+    <section class="gis-band about-band">
       <h2>About Me</h2>
       <div class="about-grid">
         <figure class="about-portrait">
@@ -101,6 +107,6 @@
     <p>&copy; 2026 Will Hanford</p>
   </footer>
 
-  <script src="js/main.js?v=6"></script>
+  <script src="js/main.js?v=8"></script>
 </body>
 </html>

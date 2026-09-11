@@ -4,17 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
   setupHeroCarousel();
 });
 
-// Home page hero: crossfade through the visual images every 5 seconds.
+// Crossfades the hero-split images every 6 seconds.
 function setupHeroCarousel() {
-  const images = document.querySelectorAll('.hero-visual-img');
-  if (images.length < 2) return;
+  const carousel = document.querySelector('.hero-carousel');
+  if (!carousel) return;
+  const imgs = Array.from(carousel.querySelectorAll('img'));
+  if (imgs.length < 2) return;
 
-  let current = 0;
+  let index = imgs.findIndex((img) => img.classList.contains('is-active'));
+  if (index < 0) index = 0;
+
   setInterval(() => {
-    images[current].classList.remove('is-active');
-    current = (current + 1) % images.length;
-    images[current].classList.add('is-active');
-  }, 5000);
+    imgs[index].classList.remove('is-active');
+    index = (index + 1) % imgs.length;
+    imgs[index].classList.add('is-active');
+  }, 6000);
 }
 
 // Mobile hamburger menu: slide-in nav drawer.
