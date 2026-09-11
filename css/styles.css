@@ -240,7 +240,7 @@ main {
 .hero-carousel {
   position: relative;
   width: 100%;
-  height: clamp(280px, 58vh, 520px);
+  height: clamp(240px, 58vh, 560px);
   overflow: hidden;
   border: 1px solid var(--color-border);
 }
@@ -371,16 +371,25 @@ main {
 }
 
 @media (max-width: 768px) {
+  .hero-heading h1 {
+    font-size: 2.6rem;
+    white-space: normal;
+  }
+
   .hero-carousel {
-    height: clamp(240px, 58vh, 560px);
+    height: clamp(150px, 35vh, 340px);
   }
 
   .hero-split-overlay {
     padding: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    background: rgba(27, 75, 67, 0.6);
   }
 
   .hero-split-text {
-    max-width: none;
+    max-width: 32ch;
+    margin: 0 auto;
   }
 
   .hero-grid {
