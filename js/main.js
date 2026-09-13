@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   setupNavToggle();
   setupLightbox();
+  setupVariantGallery();
   setupHeroCarousel();
 });
 
@@ -61,7 +62,8 @@ function setupNavToggle() {
 // Lightbox for images inside horizontal scroll strips and marked grids.
 function setupLightbox() {
   const groups = document.querySelectorAll('.scroll-strip, .lightbox-grid');
-  if (!groups.length) return;
+  const individualContainers = document.querySelectorAll('.lightbox-grid-individual');
+  if (!groups.length && !individualContainers.length) return;
 
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
@@ -110,8 +112,9 @@ function setupLightbox() {
     document.body.style.overflow = '';
   }
 
-  groups.forEach((group) => {
-    const figs = Array.from(group.querySelectorAll(':scope > figure'));
+  function wireFigures(figs) {
+    figs = figs.filter((fig) => !fig.hasAttribute('data-variants'));
+    if (!figs.length) return;
     const items = figs.map((fig) => {
       const img = fig.querySelector('img');
       const caption = fig.querySelector('figcaption');
@@ -124,6 +127,16 @@ function setupLightbox() {
     figs.forEach((fig, i) => {
       const img = fig.querySelector('img');
       img.addEventListener('click', () => open(items, i));
+    });
+  }
+
+  groups.forEach((group) => {
+    wireFigures(Array.from(group.querySelectorAll(':scope > figure')));
+  });
+
+  individualContainers.forEach((container) => {
+    Array.from(container.querySelectorAll(':scope > figure')).forEach((fig) => {
+      wireFigures([fig]);
     });
   });
 
@@ -140,5 +153,79 @@ function setupLightbox() {
     if (e.key === 'Escape') close();
     if (e.key === 'ArrowLeft') show(currentIndex - 1);
     if (e.key === 'ArrowRight') show(currentIndex + 1);
+  });
+}
+
+// Opens a main image plus a scrollable thumbnail strip of close-up variants.
+function setupVariantGallery() {
+  const triggers = document.querySelectorAll('[data-variants]');
+  if (!triggers.length) return;
+
+  const modal = document.createElement('div');
+  modal.className = 'variant-lightbox';
+  modal.hidden = true;
+  modal.innerHTML = `
+    <button type="button" class="variant-lightbox-close" aria-label="Close">&times;</button>
+    <div class="variant-lightbox-content">
+      <img class="variant-lightbox-main" alt="">
+      <div class="variant-lightbox-thumbs"></div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const mainImg = modal.querySelector('.variant-lightbox-main');
+  const thumbStrip = modal.querySelector('.variant-lightbox-thumbs');
+  const closeBtn = modal.querySelector('.variant-lightbox-close');
+
+  function showVariant(items, index, thumbs) {
+    const item = items[index];
+    mainImg.src = item.src;
+    mainImg.alt = item.alt || '';
+    thumbs.forEach((thumb, i) => thumb.classList.toggle('is-active', i === index));
+  }
+
+  function open(items) {
+    thumbStrip.innerHTML = '';
+    const thumbs = items.map((item, i) => {
+      const thumb = document.createElement('button');
+      thumb.type = 'button';
+      thumb.className = 'variant-lightbox-thumb';
+      thumb.innerHTML = `<img src="${item.src}" alt="${item.alt || ''}">`;
+      thumbStrip.appendChild(thumb);
+      return thumb;
+    });
+    thumbs.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => showVariant(items, i, thumbs));
+    });
+    showVariant(items, 0, thumbs);
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  triggers.forEach((trigger) => {
+    let items;
+    try {
+      items = JSON.parse(trigger.getAttribute('data-variants'));
+    } catch (e) {
+      return;
+    }
+    if (!Array.isArray(items) || !items.length) return;
+    const img = trigger.querySelector('img') || trigger;
+    img.addEventListener('click', () => open(items));
+  });
+
+  closeBtn.addEventListener('click', close);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) close();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!modal.hidden && e.key === 'Escape') close();
   });
 }
