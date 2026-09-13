@@ -396,10 +396,17 @@ main {
     grid-template-columns: 1fr;
     grid-template-rows: none;
     height: auto;
+    gap: 0.75rem;
+    border-top: none;
+    border-left: none;
+    border-radius: 0;
+    overflow: visible;
   }
 
   .hero-cell {
     height: 280px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
   }
 
   .hero-cell--tall {
@@ -825,7 +832,7 @@ main {
   width: 100%;
   overflow-x: auto;
   padding-bottom: 0.35rem;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .variant-lightbox-thumb {
